@@ -1,4 +1,4 @@
-import "./components/NoteListing.css"
+import "./NoteListing.css"
 
 export default function NoteListing() {
   return (
