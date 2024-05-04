@@ -20,19 +20,48 @@ nav {
 
 .new-note-heading {
     padding: 0px;
-    margin: 0px;
+    margin: 0px 0px 30px 0px;
     font-size: 75px;
 }
 
 .new-note_form {
     display: grid;
-    grid-template: repeat(auto, 4) / repeat(auto, 2);
+    grid-template: auto / auto auto;
 }
 
 .new-note-preview {
     border: 1px solid grey;
-    grid-column: 2;
-    grid-row: 1 / span 3;
+    height: 200px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    text-align: center;
+}
+
+.new-note_submit {
+    width: max-content;
+    padding: 5px 30px;
+    margin: 30px 0px;
+    border-radius: 15px;
+    border: none;
+    background-color: grey;
+    color: white;
+}
+
+.column-one {
+    display: flex;
+    flex-direction: column;
+}
+
+.column-two {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
+.new-note_input {
+    margin-top: 5px;
 }
 
 .filters {
