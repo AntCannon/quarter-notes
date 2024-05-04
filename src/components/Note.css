@@ -1,0 +1,45 @@
+
+.note-display {
+    font-family: Arial, sans-serif;
+    display: grid;
+    grid-template-rows: 50px 3fr auto auto; 
+    width: 80%; 
+    height: 500px;
+    margin: 40px auto;
+    border: 1px solid lightgray;
+    padding: 20px;
+  }
+
+  
+  .note-display .category {
+    font-style: italic;
+    color: gray;
+  }
+  
+  .button-group {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+  
+    
+  }
+  
+  .button-group .edit, .button-group .delete {
+    height: 40px;
+    width: 100px;
+    padding: 10px 20px;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .button-group .edit {
+    background-color: gray;
+  }
+  
+  .button-group .delete {
+    background-color: red;
+  }
+  
