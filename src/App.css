@@ -1,5 +1,6 @@
 * {
   font-family: Avenir;
+  margin: 0;
   /* border: 1px solid red; */
 }
 
@@ -34,6 +35,18 @@ nav {
     grid-row: 1 / span 3;
 }
 
-.new-note_submit {
-    
+.filters {
+  height: 50px;
+  background: slategray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#search {
+  height: 20px;
+  width: 400px;
+  border: 1px solid gray;
+  border-radius: 100px;
+  text-indent: 10px;
 }
