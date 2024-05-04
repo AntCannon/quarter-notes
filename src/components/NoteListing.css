@@ -1,4 +1,9 @@
 .note-listing {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.note {
   width: 200px;
   border: 1px solid black;
 }

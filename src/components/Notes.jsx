@@ -8,8 +8,6 @@ export default function Notes() {
       <h2>Notes</h2>
       <section className="notes-container">
         <NoteListing />
-        <NoteListing />
-        <NoteListing />
       </section>
     </>
   )
