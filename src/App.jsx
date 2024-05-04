@@ -7,6 +7,7 @@ import Notes from './components/Notes.jsx'
 import Note from './components/Note.jsx'
 import NewNote from "./components/NewNote.jsx"
 import About from "./components/About.jsx";
+import NotFound from "./components/NotFound.jsx";
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route path="/note/:id" element={<Note />}/>
         <Route path="/new-note" element={<NewNote />}/>
         <Route path="/about" element={<About />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </>
   );
