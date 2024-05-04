@@ -10,6 +10,6 @@ export function getNotes() {
 
 // get note
 export function getNote(noteID) {
-  return fetch(`${URL}/${noteID}`, options)
+  return fetch(`${URL}/${noteID}`)
     .then(response => response.json())
 }
