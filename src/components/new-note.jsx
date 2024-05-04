@@ -6,7 +6,9 @@ export default function NewNote() {
       <h1 className="new-note-heading">New Note</h1>
       <form className="new-note_form">
         <label className="new-note_form_label" htmlFor="title">
+          <br />
           Title
+          <br />
           <input
             className="new-note_input"
             type="text"
@@ -15,11 +17,15 @@ export default function NewNote() {
           />
         </label>
         <label className="new-note_label" htmlFor="body">
+          <br />
           Body
+          <br />
           <textarea className="new-note_input" id="body" name="body"></textarea>
         </label>
         <label className="new-note_label" htmlFor="category">
+          <br />
           Category
+          <br />
           <select className="new-note_input" id="category">
             <option>Please choose one option</option>
             {options.map((option, i) => {
@@ -27,8 +33,8 @@ export default function NewNote() {
             })}
           </select>
         </label>
-        <div className="note-preview">Note Preview</div>
-        <input type="submit" value="submit" />
+        <div className="new-note-preview">Note Preview</div>
+        <input className="new-note_submit" type="submit" value="submit" />
       </form>
     </div>
   );
