@@ -1,11 +1,18 @@
 import "./NoteListing.css"
 
-export default function NoteListing() {
+export default function NoteListing({ note }) {
+  const {
+    id,
+    title,
+    body,
+    category
+  } = note
+
   return (
     <div className="note-listing">
-      <h3>Title</h3>
-      <p>Truncated text of a note</p>
-      <p>Categories</p>
+      <h3>{title}</h3>
+      <p>{body.substring(0, 50)}</p>
+      <p>{category}</p>
     </div>
   )
 }
