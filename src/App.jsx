@@ -1,21 +1,20 @@
-import { useState } from 'react'
-import './App.css'
-import Nav from './components/Nav.jsx'
-import Search from './components/Search.jsx'
-import Note from './components/Note.jsx'
+import { useState } from "react";
+import "./App.css";
 import './components/Note.css'
+import Nav from "./components/Nav.jsx";
+import Search from "./components/Search.jsx";
+import Note from './components/Note.jsx'
+import NewNote from "./components/NewNote.jsx"
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
       <Nav />
       <Search />
       <Note />
-      
+      <NewNote />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
