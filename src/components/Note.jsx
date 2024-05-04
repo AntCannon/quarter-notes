@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import "./Note.css"
 
 function Note() {
   return (
