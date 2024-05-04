@@ -1,0 +1,8 @@
+.new-note_container {
+    border: 1px solid grey;
+    padding: 15px 20px;
+}
+
+.new-note-heading {
+    font-size: 75px;
+}
