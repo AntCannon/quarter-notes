@@ -12,11 +12,12 @@
 
 .new-note_form {
     display: grid;
-    grid-template: auto / auto 500px;
+    grid-template: auto / 50% 50%;
 }
 
 .new-note-preview {
     border: 1px solid grey;
+    border-radius: 15px;
     height: 500px;
     width: 100%;
     display: flex;
@@ -42,7 +43,9 @@
 
 #body {
   height: 250px;
-  min-width: 400px;
+  width: 75%;
+  resize: none;
+  overflow: auto;
 }
 
 .column-two {
@@ -53,4 +56,7 @@
 
 .new-note_input {
     margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid grey;
+    padding: 5px;
 }
