@@ -7,6 +7,7 @@ import Search from "./components/Search.jsx";
 import Note from './components/Note.jsx'
 import Notes from './components/Notes.jsx'
 import NewNote from "./components/NewNote.jsx"
+import About from "./components/About.jsx";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Notes />
       <Note />
       <NewNote />
+      <About />
     </>
   );
 }
