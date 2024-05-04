@@ -3,28 +3,3 @@
   margin: 0;
   /* border: 1px solid red; */
 }
-
-nav {
-  height: 30px;
-  display: flex;
-  justify-content: right;
-  align-items: center;
-  gap: 20px;
-}
-
-.filters {
-  height: 50px;
-  background: slategray;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#search {
-  height: 20px;
-  width: 400px;
-  border: 1px solid gray;
-  border-radius: 100px;
-  text-indent: 10px;
-}
-

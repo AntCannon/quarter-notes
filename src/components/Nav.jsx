@@ -1,4 +1,5 @@
-// Nav.jsx
+import "./Nav.css"
+
 export default function Notes() {
   
   return (

@@ -1,0 +1,15 @@
+.filters {
+  height: 50px;
+  background: slategray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#search {
+  height: 20px;
+  width: 400px;
+  border: 1px solid gray;
+  border-radius: 100px;
+  text-indent: 10px;
+}
