@@ -1,3 +1,15 @@
+* {
+  font-family: Avenir;
+  /* border: 1px solid red; */
+}
+
+nav {
+  height: 30px;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  gap: 20px;
+}
 .new-note_container {
     border: 1px solid grey;
     padding: 15px 20px;
