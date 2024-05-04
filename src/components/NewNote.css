@@ -12,7 +12,7 @@
 
 .new-note_form {
     display: grid;
-    grid-template: auto / auto 500px;
+    grid-template: auto / auto auto;
 }
 
 .new-note-preview {

@@ -1,3 +1,5 @@
+import "./NewNote.css"
+
 export default function NewNote() {
   const categories = ["cateogry 1", "category 2", "category 3"];
 
