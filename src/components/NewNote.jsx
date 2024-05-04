@@ -1,5 +1,5 @@
 export default function NewNote() {
-  const options = ["option 1", "option 2", "option 3"];
+  const categories = ["cateogry 1", "category 2", "category 3"];
 
   return (
     <div className="new-note_container">
@@ -32,9 +32,9 @@ export default function NewNote() {
             Category
             <br />
             <select className="new-note_input" id="category">
-              <option>Please choose one option</option>
-              {options.map((option, i) => {
-                return <option key={i}>{option}</option>;
+              <option value="" >--Choose Category--</option>
+              {categories.map((category, i) => {
+                return <option value={category} key={i}>{category}</option>;
               })}
             </select>
           </label>
