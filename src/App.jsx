@@ -10,6 +10,9 @@ import About from "./components/About.jsx";
 import NotFound from "./components/NotFound.jsx";
 
 function App() {
+  
+  const [allNotes, setAllNotes] = useState([]);
+
   return (
     <>
       <Nav />
