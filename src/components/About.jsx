@@ -52,6 +52,15 @@ export default function About() {
           <p>air-RICK</p>
           <p>Living life one meme at a time.</p>
         </div>
+        <div className="group-member">
+          <img
+            src="https://ca.slack-edge.com/TCVA3PF24-U06471E6458-39230e958373-512"
+            alt="Adeola AinaMarshall"
+          />
+          <h3>Adeola AinaMarshall </h3>
+          <p>lorem ipsum</p>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum ullam quidem minima incidunt neque et a, ab perspiciatis, officia voluptates architecto.</p>
+        </div>
       </div>
     </div>
   );
