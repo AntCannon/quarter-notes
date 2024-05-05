@@ -33,3 +33,9 @@ export function editNote(id, note) {
     return response.json();
   });
 }
+
+// delete note
+export function deleteNote(id) {
+  const options = { method: "DELETE"};
+  return fetch(`${URL}/${id}`, options)
+}
