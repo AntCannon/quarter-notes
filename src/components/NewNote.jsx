@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { createNote } from "../utils/fetch";
 import "./NewNote.css";
+
+const URL = import.meta.env.VITE_API_BASE_URL;
 
 export default function NewNote() {
   const categories = ["Category 1", "Category 2", "Category 3"];
   const navigate = useNavigate();
   const [form, setForm] = useState({
-    id: "",
     title: "",
     body: "",
     category: "",
@@ -20,32 +22,18 @@ export default function NewNote() {
     }));
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    
-    if (!form.title || !form.body || !form.category) {
-      alert("Please fill in all fields.");
-      return;
-    }
-  
-    try {
-      const response = await fetch("YOUR_API_ENDPOINT", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(form),
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    createNote(form)
+      .then((response) => {
+        console.log(response);
+        // navigate(`/${response.id}`);
+      })
+      .catch((error) => {
+        console.error(error);
       });
-      
-      if (response.ok) {
-        navigate("/");
-      } else {
-        console.error("Failed to submit form:", response.statusText);
-      }
-    } catch (error) {
-      console.error("Error submitting form:", error);
-    }
-  };;
+  };
+  
 
   return (
     <div className="new-note_container">
