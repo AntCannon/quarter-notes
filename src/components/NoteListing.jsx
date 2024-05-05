@@ -1,5 +1,6 @@
 import "./NoteListing.css"
 
+
 export default function NoteListing({ note }) {
   const {
     id,

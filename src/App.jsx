@@ -9,7 +9,7 @@ import NewNote from "./components/NewNote.jsx";
 import About from "./components/About.jsx";
 import NotFound from "./components/NotFound.jsx";
 
-function App() {
+export default function App() {
   const [search, setSearch] = useState("");
   function handleFilterChange(searchQuery) {
     setSearch(searchQuery);
@@ -31,5 +31,3 @@ function App() {
     </>
   );
 }
-
-export default App;
