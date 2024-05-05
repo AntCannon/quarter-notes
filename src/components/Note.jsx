@@ -1,19 +1,20 @@
-import { useState, useEffect } from 'react'
-import {useParams} from "react-router-dom"
-import { getNote } from "../utils/fetch.js"
-import "./Note.css"
+import { useState, useEffect } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import { getNote } from "../utils/fetch.js";
+import "./Note.css";
 
 export default function Note() {
-  const [note , setNote] = useState({})
-  const {id} = useParams()
+  const [note, setNote] = useState({});
+  const { id } = useParams();
+  const navigate = useNavigate();
 
   useEffect(() => {
     getNote(id)
-      .then((response) => { 
-          setNote(response);         
+      .then((response) => {
+        setNote(response);
       })
       .catch((error) => {
-        console.error("Fetching note failed:", error);    
+        console.error("Fetching note failed:", error);
       });
   }, [id]);
 
@@ -24,7 +25,7 @@ export default function Note() {
         <p>{note.body}</p>
         <p className="category">{note.category}</p>
         <div className="button-group">
-          <button className="edit">Edit</button>
+          <button className="edit" onClick={() => navigate(`/notes/${id}/edit`)}>Edit</button>
           <button className="delete">Delete</button>
         </div>
       </div>

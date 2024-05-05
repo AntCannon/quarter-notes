@@ -17,8 +17,19 @@ export function createNote(note) {
     body: JSON.stringify(note),
     headers: { "Content-Type": "application/json" },
   };
-  return fetch(URL, options)
-    .then((response) => {
-      return response.json();
-    });
+  return fetch(URL, options).then((response) => {
+    return response.json();
+  });
+}
+
+// edit note
+export function editNote(id, note) {
+  const options = {
+    method: "PUT",
+    body: JSON.stringify(note),
+    headers: { "Content-Type": "application/json" },
+  };
+  return fetch(`${URL}/${id}`, options).then((response) => {
+    return response.json();
+  });
 }
