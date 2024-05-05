@@ -11,7 +11,9 @@ export default function NoteListing({ note }) {
   return (
     <div className="note-listing">
       <h3>{title}</h3>
-      <p>{body.substring(0, 50)}...</p>
+      <p>{body.length < 50 ?
+        body :
+        body.substring(0, 50)+"..."}</p>
       <p>{category}</p>
     </div>
   )
