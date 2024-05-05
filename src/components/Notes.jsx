@@ -1,13 +1,12 @@
 import { useEffect, useState } from "react"
 import { getNotes } from "../utils/fetch.js"
-import db from "../data/db.json"
 import "./Notes.css"
 import NoteListing from "./NoteListing.jsx"
 
 console.log(db)
 
 export default function Notes() {
-  const [ notes, setNotes ] = useState(db.notes);
+  const [ notes, setNotes ] = useState([]);
   const [ isLoading, setIsLoading ] = useState(false);
 
   useEffect(() =>{
@@ -19,16 +18,8 @@ export default function Notes() {
     })
     .catch(err => {
       console.log(err)
-      console.log("local data")
       setIsLoading(false)
     })
-
-    if (isLoading) {
-      setTimeout(() => {
-        console.log("local data")
-        setIsLoading(false)
-      }, 2000)
-    }
   }, [])
 
 

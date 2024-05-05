@@ -1,6 +1,6 @@
 import "./Filters.css"
 
-export default function Search() {
+export default function Filters() {
   
   return (
     <div className="filters">
