@@ -3,3 +3,7 @@
   margin: 0;
   /* border: 1px solid red; */
 }
+
+main {
+  margin: 0 10px;
+}

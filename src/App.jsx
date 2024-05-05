@@ -14,13 +14,15 @@ function App() {
     <>
       <Nav />
       <Filters />
-      <Routes>
-        <Route path="/" element={<Notes />} />
-        <Route path="/note/:id" element={<Note />} />
-        <Route path="/new-note" element={<NewNote />} />
-        <Route path="/about" element={<About />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+      <main>
+        <Routes>
+          <Route path="/" element={<Notes />} />
+          <Route path="/note/:id" element={<Note />} />
+          <Route path="/new-note" element={<NewNote />} />
+          <Route path="/about" element={<About />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </main>
     </>
   );
 }
