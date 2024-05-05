@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { Link } from "react-router-dom"
 import { getNotes } from "../utils/fetch.js"
 import db from "../data/db.json"
 import "./Notes.css"
@@ -39,10 +40,11 @@ export default function Notes() {
         {isLoading ? 
           <h3>Loading...</h3> :
           notes.map(note => (
+            <Link to={`/${note.id}`} key={note.id}>
             <NoteListing
               note={note}
-              key={note.id}
-            />
+              />
+              </Link>
           ))
         }
       </section>
