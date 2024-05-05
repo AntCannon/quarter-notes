@@ -11,7 +11,9 @@ import NotFound from "./components/NotFound.jsx";
 
 function App() {
   const [search, setSearch] = useState("");
-  const handleFilterChange = (searchQuery) => setSearch(searchQuery);
+  function handleFilterChange(searchQuery) {
+    setSearch(searchQuery);
+  };
 
   return (
     <>
