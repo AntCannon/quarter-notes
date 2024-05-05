@@ -1,47 +1,55 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { createNote } from "../utils/fetch";
-import "./NewNote.css";
+import { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import { getNote, editNote } from "../utils/fetch";
+import "./EditNote.css";
 
-export default function NewNote() {
+export default function EditNote() {
   const categories = ["Category 1", "Category 2", "Category 3"];
   const navigate = useNavigate();
+  const { id } = useParams();
   const [form, setForm] = useState({
     title: "",
     body: "",
     category: "",
   });
 
-  const handleChange = (e) => {
+  useEffect(() => {
+    console.log(id, "useEffect");
+    getNote(id)
+      .then((data) => setForm(data))
+      .catch((error) => console.log(error, "Unable to fetch error"));
+  }, []);
+
+  function handleChange(e) {
     const { name, value } = e.target;
     setForm((prevForm) => ({
       ...prevForm,
       [name]: value,
     }));
-  };
+  }
 
-  const handleSubmit = (event) => {
+  function handleSave(event) {
     event.preventDefault();
-    createNote(form)
-      .then((response) => {
-        navigate(`/notes/${response.id}`);
+    editNote(id, form)
+      .then((data) => {
+        navigate(`/notes/${data.id}`);
       })
       .catch((error) => {
         console.error(error);
       });
-  };
+  }
 
   return (
-    <div className="new-note_container">
-      <h2 className="new-note-heading">New Note</h2>
-      <form className="new-note_form" onSubmit={handleSubmit}>
+    <div className="edit-note_container">
+      <h2 className="edit-note-heading">Edit Note</h2>
+      <form className="edit-note_form" onSubmit={handleSave}>
         <div className="column-one">
-          <label className="new-note_form_label" htmlFor="title">
+          <label className="edit-note_form_label" htmlFor="title">
             <br />
             Title
             <br />
             <input
-              className="new-note_input"
+              className="edit-note_input"
               type="text"
               id="title"
               name="title"
@@ -50,26 +58,25 @@ export default function NewNote() {
               required
             />
           </label>
-          <label className="new-note_label" htmlFor="body">
+          <label className="edit-note_label" htmlFor="body">
             <br />
             Body
             <br />
             <textarea
-              className="new-note_input body"
+              className="edit-note_input body"
               id="body"
               name="body"
               value={form.body}
               onChange={handleChange}
               required
-            >
-            </textarea>
+            ></textarea>
           </label>
-          <label className="new-note_label" htmlFor="category">
+          <label className="edit-note_label" htmlFor="category">
             <br />
             Category
             <br />
             <select
-              className="new-note_input"
+              className="edit-note_input"
               id="category"
               name="category"
               value={form.category}
@@ -88,12 +95,15 @@ export default function NewNote() {
           </label>
         </div>
         <div className="column-two">
-          <div className="new-note-preview">
-            <h2>{form.title || "Title goes here"}</h2>
-            <p className="body">{form.body || "Body goes here"}</p>
-            <p>{form.category || "Category goes here"}</p>
+          <div className="edit-note-preview">
+            <h2>{form.title}</h2>
+            <p className="body">{form.body}</p>
+            <p>{form.category}</p>
           </div>
-          <input className="new-note_submit" type="submit" value="Submit" />
+          <div>
+            <button className="edit-note_submit" type="submit">Save</button>
+            <button className="edit-note_submit" type="button" onClick={() => navigate(`/${id}`)}>Cancel</button>
+          </div>
         </div>
       </form>
     </div>

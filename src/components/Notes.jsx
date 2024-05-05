@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { getNotes } from "../utils/fetch.js";
 import { Link } from "react-router-dom"
 import "./Notes.css";
+import { getNotes } from "../utils/fetch.js";
 import NoteListing from "./NoteListing.jsx";
 
 export default function Notes({ search }) {
@@ -33,7 +33,7 @@ export default function Notes({ search }) {
           <h3>Loading...</h3>
         ) : (
           filteredNotes.map((note) => (
-            <Link to={`/${note.id}`} key={note.id}>
+            <Link to={`/notes/${note.id}`} key={note.id}>
               <NoteListing note={note} />
             </Link>
             )
