@@ -37,7 +37,7 @@ export default function NewNote() {
 
   return (
     <div className="new-note_container">
-      <h1 className="new-note-heading">New Note</h1>
+      <h2 className="new-note-heading">New Note</h2>
       <form className="new-note_form" onSubmit={handleSubmit}>
         <div className="column-one">
           <label className="new-note_form_label" htmlFor="title">
@@ -89,7 +89,7 @@ export default function NewNote() {
         </div>
         <div className="column-two">
           <div className="new-note-preview">
-            <h3>{form.title || "Title goes here"}</h3>
+            <h2>{form.title || "Title goes here"}</h2>
             <p className="body">{form.body || "Body goes here"}</p>
             <p>{form.category || "Category goes here"}</p>
           </div>
