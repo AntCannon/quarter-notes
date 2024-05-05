@@ -101,7 +101,7 @@ export default function EditNote() {
           </div>
           <div>
             <button className="edit-note_submit" type="submit">Save</button>
-            <button className="edit-note_submit" type="button" onClick={() => navigate(`/${id}`)}>Cancel</button>
+            <button className="edit-note_submit" type="button" onClick={() => navigate(`/notes/${id}`)}>Cancel</button>
           </div>
         </div>
       </form>
