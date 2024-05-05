@@ -1,24 +1,19 @@
-import React, { useState, useEffect } from 'react'
-import{useParams} from "react-router-dom"
+import { useState, useEffect } from 'react'
+import {useParams} from "react-router-dom"
 import { getNote } from "../utils/fetch.js"
 import "./Note.css"
 
-
-
-function Note() {
+export default function Note() {
   const [note , setNote] = useState({})
   const {id} = useParams()
-console.log(note)
 
   useEffect(() => {
     getNote(id)
       .then((response) => { 
-          setNote(response);
-          
+          setNote(response);         
       })
       .catch((error) => {
-        console.error("Fetching note failed:", error);
-       
+        console.error("Fetching note failed:", error);    
       });
   }, [id]);
 
@@ -36,7 +31,3 @@ console.log(note)
     </div>
   );
 }
-
-export default Note;
-
-

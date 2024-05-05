@@ -9,14 +9,17 @@ import NewNote from "./components/NewNote.jsx";
 import About from "./components/About.jsx";
 import NotFound from "./components/NotFound.jsx";
 
-function App() {
+export default function App() {
+  const [search, setSearch] = useState("");
+  const handleFilterChange = (searchQuery) => setSearch(searchQuery);
+
   return (
     <>
       <Nav />
-      <Filters />
+      <Filters handleFilterChange={handleFilterChange} />
       <main>
         <Routes>
-          <Route path="/" element={<Notes />} />
+          <Route path="/" element={<Notes search={search} />} />
           <Route path="/:id" element={<Note />} />
           <Route path="/new-note" element={<NewNote />} />
           <Route path="/about" element={<About />} />
@@ -26,5 +29,3 @@ function App() {
     </>
   );
 }
-
-export default App;
