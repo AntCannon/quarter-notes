@@ -1,12 +1,18 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { getNote } from "../utils/fetch.js";
+import { getNote, deleteNote } from "../utils/fetch.js";
 import "./Note.css";
 
 export default function Note() {
   const [note, setNote] = useState({});
   const { id } = useParams();
   const navigate = useNavigate();
+
+  function handleDelete() {
+    deleteNote(id)
+      .then(() => navigate("/"))
+      .catch(err => console.log(err))
+  }
 
   useEffect(() => {
     getNote(id)
@@ -25,8 +31,18 @@ export default function Note() {
         <p>{note.body}</p>
         <p className="category">{note.category}</p>
         <div className="button-group">
-          <button className="edit" onClick={() => navigate(`/notes/${id}/edit`)}>Edit</button>
-          <button className="delete">Delete</button>
+          <button
+            className="edit"
+            onClick={() => navigate(`/notes/${id}/edit`)}
+          >
+            Edit
+          </button>
+          <button
+            className="delete"
+            onClick={handleDelete}
+          >
+            Delete
+          </button>
         </div>
       </div>
     </div>

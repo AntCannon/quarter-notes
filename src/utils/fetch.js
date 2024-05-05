@@ -34,22 +34,8 @@ export function editNote(id, note) {
   });
 }
 
-// edit note
-export function editNote(id, note) {
-  const options = {
-    method: "PUT",
-    body: JSON.stringify(note),
-    headers: { "Content-Type": "application/json" },
-  };
-  return fetch(`${URL}/${id}`, options).then((response) => {
-    return response.json();
-  });
-}
-
 // delete note
 export function deleteNote(id) {
-  const options = {
-    method: "DELETE"
-  };
+  const options = { method: "DELETE"};
   return fetch(`${URL}/${id}`, options)
 }
