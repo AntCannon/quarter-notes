@@ -14,7 +14,6 @@ export default function EditNote() {
   });
 
   useEffect(() => {
-    console.log(id, "useEffect");
     getNote(id)
       .then((data) => setForm(data))
       .catch((error) => console.log(error, "Unable to fetch error"));
