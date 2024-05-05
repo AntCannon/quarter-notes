@@ -1,9 +1,6 @@
-import { useState, useEffect } from 'react'
-import { getNotes } from "../utils/fetch.js"
-import "./Note.css"
+import "./Note.css";
 
 function Note() {
-
   return (
     <div className="note-container">
       <div className="note-display">

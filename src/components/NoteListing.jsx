@@ -1,13 +1,5 @@
-import { Link } from 'react-router-dom';
-import dummyData from "/src/data/data.json"
-
 export default function NoteListing({ note }) {
-  const {
-    id,
-    title,
-    body,
-    category
-  } = note
+  const { id, title, body, category } = note;
 
   return (
     <div className="note-listing">
