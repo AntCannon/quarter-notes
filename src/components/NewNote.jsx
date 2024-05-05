@@ -26,8 +26,7 @@ export default function NewNote() {
     event.preventDefault();
     createNote(form)
       .then((response) => {
-        console.log(response);
-        // navigate(`/${response.id}`);
+        navigate(`/${response.id}`);
       })
       .catch((error) => {
         console.error(error);
@@ -51,6 +50,7 @@ export default function NewNote() {
               name="title"
               value={form.title}
               onChange={handleChange}
+              required
             />
           </label>
           <label className="new-note_label" htmlFor="body">
@@ -63,6 +63,7 @@ export default function NewNote() {
               name="body"
               value={form.body}
               onChange={handleChange}
+              required
             ></textarea>
           </label>
           <label className="new-note_label" htmlFor="category">
@@ -75,6 +76,7 @@ export default function NewNote() {
               name="category"
               value={form.category}
               onChange={handleChange}
+              required
             >
               <option value="">--Choose Category--</option>
               {categories.map((category, i) => {
