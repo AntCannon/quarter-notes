@@ -1,18 +1,19 @@
 import { Link } from 'react-router-dom';
 import dummyData from "/src/data/data.json"
 
-export default function NoteListing() {
+export default function NoteListing({ note }) {
+  const {
+    id,
+    title,
+    body,
+    category
+  } = note
+
   return (
     <div className="note-listing">
-      {dummyData.map(note => (
-        <Link key={note.id} to={`/note/${note.id}`}>
-          <div className="note">
-            <h3>{note.title}</h3>
-            <p>{note.content}</p>
-            <p>Categories</p>
-          </div>
-        </Link>
-      ))}
+      <h3>{title}</h3>
+      <p>{body.substring(0, 50)}...</p>
+      <p>{category}</p>
     </div>
   );
 }

@@ -1,0 +1,34 @@
+{
+  "notes": [
+    {
+      "id": 1,
+      "title": "Software Design Principles",
+      "body": "Exploring SOLID principles and their application in software engineering.",
+      "category": "school"
+    },
+    {
+      "id": 2,
+      "title": "Homework Tasks for Today",
+      "body": "Complete math assignment Prepare presentation slides Study for history test",
+      "category": "home"
+    },
+    {
+      "id": 3,
+      "title": "Software Testing Techniques",
+      "body": "Understanding various testing methodologies like unit testing, integration testing, and end-to-end testing.",
+      "category": "school"
+    },
+    {
+      "id": 4,
+      "title": "House Chores Checklist",
+      "body": "Vacuum the living room Water the plants Do laundry",
+      "category": "home"
+    },
+    {
+      "id": 5,
+      "title": "Data Structures and Algorithms Study",
+      "body": "Reviewing fundamental data structures and algorithms for software engineering interviews.",
+      "category": "school"
+    }
+  ]
+}
