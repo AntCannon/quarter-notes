@@ -1,5 +1,12 @@
+import "./NoteListing.css"
+
 export default function NoteListing({ note }) {
-  const { id, title, body, category } = note;
+  const {
+    id,
+    title,
+    body,
+    category
+  } = note
 
   return (
     <div className="note-listing">
@@ -7,5 +14,5 @@ export default function NoteListing({ note }) {
       <p>{body.substring(0, 50)}...</p>
       <p>{category}</p>
     </div>
-  );
+  )
 }

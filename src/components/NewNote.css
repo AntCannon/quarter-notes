@@ -17,13 +17,17 @@
 
 .new-note-preview {
     border: 1px solid grey;
+    padding: 5%;
     border-radius: 15px;
     height: 500px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;  
-    text-align: center;
+    width: 95%;
+    display: block;
+    overflow: auto;
+}
+
+.new-note-preview p {
+    max-width: 100%;
+    word-wrap: break-word;
 }
 
 .new-note_submit {
@@ -36,12 +40,18 @@
     color: white;
 }
 
+.new-note_submit:hover {
+    cursor: pointer;
+    background-color: lightblue;
+    color: black;
+}
+
 .column-one {
     display: flex;
     flex-direction: column;
 }
 
-#body {
+.body {
   height: 250px;
   width: 75%;
   resize: none;

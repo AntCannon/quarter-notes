@@ -6,6 +6,7 @@ export default function NewNote() {
   const categories = ["Category 1", "Category 2", "Category 3"];
   const navigate = useNavigate();
   const [form, setForm] = useState({
+    id: "",
     title: "",
     body: "",
     category: "",
@@ -19,28 +20,32 @@ export default function NewNote() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form submitted with data:", form);
-
-    fetch("your-submit-url", {
-      method: "POST",
-      body: JSON.stringify(form),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      .then((response) => {
-        if (response.ok) {
-          navigate("/");
-        } else {
-          throw new Error("Something went wrong during form submission");
-        }
-      })
-      .catch((error) => console.error("Error:", error));
-
-    navigate("/");
-  };
+    
+    if (!form.title || !form.body || !form.category) {
+      alert("Please fill in all fields.");
+      return;
+    }
+  
+    try {
+      const response = await fetch("YOUR_API_ENDPOINT", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(form),
+      });
+      
+      if (response.ok) {
+        navigate("/");
+      } else {
+        console.error("Failed to submit form:", response.statusText);
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+    }
+  };;
 
   return (
     <div className="new-note_container">
