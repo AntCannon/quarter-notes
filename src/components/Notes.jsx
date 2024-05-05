@@ -3,7 +3,7 @@ import { getNotes } from "../utils/fetch.js";
 import "./Notes.css";
 import NoteListing from "./NoteListing.jsx";
 
-export default function Notes() {
+export default function Notes({ search }) {
   const [notes, setNotes] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
