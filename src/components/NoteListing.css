@@ -1,6 +1,7 @@
 .note-listing {
   flex-basis: 30%;
-  min-width: 200px;
+  width: 250px;
   border: 1px solid black;
   padding: 10px;
+  overflow: hidden;
 }
