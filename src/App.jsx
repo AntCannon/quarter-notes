@@ -20,7 +20,7 @@ function App() {
       <main>
         <Routes>
           <Route path="/" element={<Notes search={search} />} />
-          <Route path="/note/:id" element={<Note />} />
+          <Route path="/:id" element={<Note />} />
           <Route path="/new-note" element={<NewNote />} />
           <Route path="/about" element={<About />} />
           <Route path="*" element={<NotFound />} />
