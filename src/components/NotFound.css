@@ -1,8 +1,8 @@
-div {
+.not-found {
   text-align: center;
 }
 
-h2 {
+.error {
   color: red;
 }
 
