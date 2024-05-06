@@ -1,8 +1,7 @@
 .note-display {
-  height: 500px;
   margin: 40px auto;
   display: grid;
-  grid-template-rows: auto 70% auto auto; 
+  grid-template-rows: 1fr 3fr 0.5fr 1fr; 
   width: 80%; 
   border: 1px solid lightgray;
   padding: 20px;
