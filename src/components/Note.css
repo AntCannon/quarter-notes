@@ -2,7 +2,7 @@
     height: 500px;
     margin: 40px auto;
     display: grid;
-    grid-template-rows: 50px 3fr auto auto; 
+    grid-template-rows: auto 3fr auto auto; 
     width: 80%; 
     border: 1px solid lightgray;
     padding: 20px;

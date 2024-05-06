@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Routes, Route } from "react-router-dom"; // npm i react-router-dom
+import { Routes, Route, Link } from "react-router-dom"; // npm i react-router-dom
 import "./App.css";
 import Nav from "./components/Nav.jsx";
 import Filters from "./components/Filters.jsx";
@@ -19,19 +19,27 @@ export default function App() {
 
   return (
     <>
-      <Nav />
-      <Filters handleFilterChange={handleFilterChange} />
-      <main>
-        <Routes>
-          <Route path="/" element={<Notes search={search} />} />
-          <Route path="/notes/:id" element={<Note />} />
-          <Route path="/notes/new" element={<NewNote />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/notes/:id/edit" element={<EditNote />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </main>
-      <Footer />
+      <div className="float"> 
+        <Link to="/notes/new">
+          <div className="square"></div>
+        </Link>
+      </div>
+
+      <div className="under">
+        <Nav />
+        <Filters handleFilterChange={handleFilterChange} />
+        <main>
+          <Routes>
+            <Route path="/" element={<Notes search={search} />} />
+            <Route path="/notes/:id" element={<Note />} />
+            <Route path="/notes/new" element={<NewNote />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/notes/:id/edit" element={<EditNote />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
     </>
   );
 }

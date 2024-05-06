@@ -11,9 +11,28 @@ body{
 #root {
   min-height: 100vh;
   display: grid;
-  grid-template-rows: auto auto 1fr auto;
+  grid-template-rows: 0 1fr;
+}
+
+.under {
+  height: 100vh;
 }
 
 main {
   margin: 0 40px;
+}
+
+.float {
+  width: 100px;
+  height: 100px;
+  position: sticky;
+  z-index: 10;
+  left: 80%;
+  top: 80%;
+}
+
+.square {
+  width: 100px;
+  height: 100px;
+  background: red;
 }
