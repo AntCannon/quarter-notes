@@ -3,20 +3,19 @@ import "./About.css";
 export default function About() {
   return (
     <div>
-      <h1>Meet The Group</h1>
+      <h1>The Developers</h1>
       <div className="group-members">
         <div className="group-member">
           <img
             src="https://ca.slack-edge.com/TCVA3PF24-U063SF1VCJ3-f07910bf77c9-512"
-            alt="Codewars King"
+            alt="CodeTrack King"
           />
-          <h3>Anthony Cannonier aka "CodeWars King"</h3>
+          <h3>Anthony Cannonier aka "CodeTrack King"</h3>
           <p>Head Avenger</p>
           <p>
             After the fall of Thanos, I was interested in a career change. I
             love to learn, solve problems, create, and foster growth, so it was
-            only natural for me to gravitate into tech. Joining Pursuit has been
-            the best decision I have made thus far
+            only natural for me to gravitate into tech. Joining Pursuit has provided me with even more super powers.
           </p>
         </div>
         <div className="group-member">
@@ -41,7 +40,7 @@ export default function About() {
           />
           <h3>Ari Collado</h3>
           <p>Pedestrian</p>
-          <p>I'm just happy to be here</p>
+          <p>Intern</p>
         </div>
         <div className="group-member">
           <img

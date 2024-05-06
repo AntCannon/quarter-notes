@@ -1,9 +1,14 @@
 * {
   font-family: Avenir;
-  margin: 0;
   /* border: 1px solid red; */
 }
 
-main {
-  margin: 0 10px;
+body{
+  margin: 0;
+}
+
+#root {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
 }
