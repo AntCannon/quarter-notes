@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import { getNote, deleteNote } from "../utils/fetch.js";
 import "./Note.css";
 
@@ -26,6 +26,7 @@ export default function Note() {
 
   return (
     <div className="note-container">
+      <Link to={"/"} className="return-arrow">&larr;</Link>
       <div className="note-display">
         <h1>{note.title}</h1>
         <p>{note.body}</p>
