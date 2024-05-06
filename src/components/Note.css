@@ -1,16 +1,23 @@
 .note-display {
   margin: 40px auto;
   display: grid;
-  grid-template-rows: 1fr 3.5fr 0.5fr 0.5fr; 
+  grid-template-rows: auto 3.5fr auto auto; 
   width: 80%; 
   border: 1px solid lightgray;
   padding: 20px;
+}
+
+h2 {
+  height: fit-content;
+  /* margin: none; */
 }
 
 .note-display .category {
   font-style: italic;
   color: gray;
 }
+
+
 
 .button-group {
   display: flex;
