@@ -19,27 +19,19 @@ export default function App() {
 
   return (
     <>
-      <div className="float"> 
-        <Link to="/notes/new">
-          <div className="square"></div>
-        </Link>
-      </div>
-
-      <div className="under">
-        <Nav />
-        <Filters handleFilterChange={handleFilterChange} />
-        <main>
-          <Routes>
-            <Route path="/" element={<Notes search={search} />} />
-            <Route path="/notes/:id" element={<Note />} />
-            <Route path="/notes/new" element={<NewNote />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/notes/:id/edit" element={<EditNote />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
+      <Nav />
+      <Filters handleFilterChange={handleFilterChange} />
+      <main>
+        <Routes>
+          <Route path="/" element={<Notes search={search} />} />
+          <Route path="/notes/:id" element={<Note />} />
+          <Route path="/notes/new" element={<NewNote />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/notes/:id/edit" element={<EditNote />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </main>
+      <Footer />
     </>
   );
 }
