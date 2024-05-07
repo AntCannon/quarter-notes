@@ -1,5 +1,6 @@
 nav {
   height: 30px;
+  padding: 0 20px;
   display: flex;
   justify-content: right;
   align-items: center;

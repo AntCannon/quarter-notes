@@ -28,7 +28,7 @@ export default function Note() {
     <div className="note-container">
       <Link to={"/"} className="return-arrow">&larr;</Link>
       <div className="note-display">
-        <h1>{note.title}</h1>
+        <h2>{note.title}</h2>
         <p>{note.body}</p>
         <p className="category">{note.category}</p>
         <div className="button-group">

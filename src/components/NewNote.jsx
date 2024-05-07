@@ -58,7 +58,7 @@ export default function NewNote() {
         <div className="column-one">
           <label className="new-note_form_label" htmlFor="title">
             <br />
-            Title
+            <strong>Title</strong>
             <br />
             <input
               className="new-note_input"
@@ -72,7 +72,7 @@ export default function NewNote() {
           </label>
           <label className="new-note_label" htmlFor="body">
             <br />
-            Body
+            <strong>Body</strong>
             <br />
             <textarea
               className="new-note_input body"
@@ -86,7 +86,7 @@ export default function NewNote() {
           </label>
           <label className="new-note_label" htmlFor="category">
             <br />
-            Category
+            <strong>Category</strong>
             <br />
             <select
               className="new-note_input"
@@ -110,9 +110,9 @@ export default function NewNote() {
         </div>
         <div className="column-two">
           <div className="new-note-preview">
-            <h2>{form.title || "Title goes here"}</h2>
-            <p className="body">{form.body || "Body goes here"}</p>
-            <p>{form.category || "Category goes here"}</p>
+            <h3>{form.title || "Title preview"}</h3>
+            <p className="body">{form.body || "Body preview"}</p>
+            <p>{form.category || "Category preview"}</p>
           </div>
           <input className="new-note_submit" type="submit" value="Submit" />
         </div>
