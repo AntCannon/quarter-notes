@@ -4,7 +4,7 @@ import { createNote } from "../utils/fetch";
 import "./NewNote.css";
 
 export default function NewNote() {
-  const categories = ["Category 1", "Category 2", "Category 3"];
+  const [categories, setCategories] = useState(["Category 1", "Category 2", "Category 3"]);
   const navigate = useNavigate();
   const [form, setForm] = useState({
     title: "",
@@ -29,6 +29,25 @@ export default function NewNote() {
       .catch((error) => {
         console.error(error);
       });
+  };
+
+  const handleCategoryChange = (e) => {
+    const { value } = e.target;
+    if (value === "Custom") {
+      const customCategory = prompt("Enter custom category:");
+      if (customCategory) {
+        setCategories((prevCategories) => [...prevCategories, customCategory]);
+        setForm((prevForm) => ({
+          ...prevForm,
+          category: customCategory,
+        }));
+      }
+    } else {
+      setForm((prevForm) => ({
+        ...prevForm,
+        category: value,
+      }));
+    }
   };
 
   return (
@@ -73,7 +92,7 @@ export default function NewNote() {
               id="category"
               name="category"
               value={form.category}
-              onChange={handleChange}
+              onChange={handleCategoryChange}
               required
             >
               <option value="">--Choose Category--</option>
@@ -84,6 +103,7 @@ export default function NewNote() {
                   </option>
                 );
               })}
+              <option value="Custom">Custom...</option>
             </select>
           </label>
         </div>
