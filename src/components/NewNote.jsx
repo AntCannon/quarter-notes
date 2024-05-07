@@ -4,7 +4,7 @@ import { createNote } from "../utils/fetch";
 import "./NewNote.css";
 
 export default function NewNote() {
-  const [categories, setCategories] = useState(["Category 1", "Category 2", "Category 3"]);
+  const [categories, setCategories] = useState(["Home", "Work", "School"]);
   const navigate = useNavigate();
   const [form, setForm] = useState({
     title: "",
