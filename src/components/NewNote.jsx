@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { createNote } from "../utils/fetch";
 import "./NewNote.css";
 
@@ -53,6 +53,7 @@ export default function NewNote() {
   return (
     <div className="new-note_container">
       <h2 className="new-note-heading">New Note</h2>
+      <Link to={"/"} className="return-arrow">&larr;</Link>
       <form className="new-note_form" onSubmit={handleSubmit}>
         <div className="column-one">
           <label className="new-note_form_label" htmlFor="title">
