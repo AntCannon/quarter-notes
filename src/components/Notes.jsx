@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 import "./Notes.css";
 import { getNotes } from "../utils/fetch.js";
 import NoteListing from "./NoteListing.jsx";
@@ -21,9 +21,12 @@ export default function Notes({ search }) {
       });
   }, []);
 
-  const filteredNotes = notes.filter((note) =>
-    note.title.toLowerCase().includes(search.toLowerCase())
-  );
+  const filteredNotes = notes.filter((note) => {
+    const titleMatch =
+      note.title.toLowerCase().includes(search.toLowerCase()) ||
+      note.body.toLowerCase().includes(search.toLowerCase());
+    return titleMatch;
+  });
 
   return (
     <>
@@ -36,8 +39,7 @@ export default function Notes({ search }) {
             <Link to={`/notes/${note.id}`} key={note.id}>
               <NoteListing note={note} />
             </Link>
-            )
-          )
+          ))
         )}
       </section>
     </>
